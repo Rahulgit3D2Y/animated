@@ -44,30 +44,20 @@ h1 {
   color: var(--blue);
   text-align: center;
   margin: 3rem 0;
-  animation-name:heading-slide;
-  animation-duration: 3s;
-  animation-timing-function: ease-in;
-  animation-fill-mode: backwards;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
+  animation: heading-slide var(--big-animation-duration) ease-in-out infinite;
   /* ADD YOUR CODE HERE */
 }
 
 /* ADD YOUR CODE HERE */
  @keyframes heading-slide {
-    0%
-    {
-        transform: translateY(-10%);
-    }
-    50%
-    {
-        transform: translateY(20%);
-    }
-    100%
-    {
-        transform: translateY(-10%);
-    }
+0%,100%
+{
+  transform: translateY(-10%);
+}
+50%
+{
+  transform: translateY(10%);
+}
 } 
 
 
@@ -84,12 +74,17 @@ h1 {
   background-color: var(--dark);
   padding: 1.5rem;
   border-radius: 1rem;
-
+  
   /* ADD YOUR CODE HERE */
+  filter:blur(5px) grayscale(35%);
+  transition: filter var(--medium-animation-duration);
 }
 
 /* ADD YOUR CODE HERE */
-
+  .card:hover
+  {
+    filter: blur(0px) grayscale(0%);
+  }
 /* .card LAYOUT */
 .card {
   display: flex;
@@ -102,13 +97,21 @@ h1 {
 /* .card ANIMATION */
 .card {
   /* ADD YOUR CODE HERE */
-  
+  animation: cards-slide var(--medium-animation-duration) ease-in-out 1;
 }
 
 
 /* ADD YOUR CODE HERE */
-/* @keyframes cards-slide {
-} */
+ @keyframes cards-slide {
+  0%
+  {
+    transform: translateY(100%);
+  }
+  100%
+  {
+    transform: translateY();
+  }
+} 
 
 /* .tech-icon LAYOUT */
 .tech-icon {
@@ -119,13 +122,14 @@ h1 {
 /* .tech-icon STYLES */
 .tech-icon {
   /* ADD CODE HERE */
-  
+  filter:blur(3px) grayscale(30%);
+  transition: filter var(--medium-animation-duration);
 }
 
 /* .tech-icon STYLES */
 .card:hover > .tech-icon {
   /* ADD CODE HERE */
-  
+  filter:blur(0px) grayscale(0%);
 }
 
 /* p STYLES */
@@ -151,11 +155,15 @@ p {
   border: 1px solid var(--blue);
 
   /* ADD YOUR CODE HERE */
+  transform: translate();
+  transition: transform var(--short-animation-time) ease-in-out;
 }
 
 /* .see-more-btn STYLES */
 .see-more-btn:hover {
   cursor: pointer;
-
   /* ADD YOUR CODE HERE */
+  background-color: var(--blue);
+  color: var(--light);
+  transform: translateY(-5px);
 }
