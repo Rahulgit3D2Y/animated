@@ -44,8 +44,8 @@ h1 {
   color: var(--blue);
   text-align: center;
   margin: 3rem 0;
-  animation: heading-slide var(--big-animation-duration) ease-in-out infinite;
   /* ADD YOUR CODE HERE */
+  animation: heading-slide var(--big-animation-duration) ease-in-out infinite;
 }
 
 /* ADD YOUR CODE HERE */
@@ -77,7 +77,7 @@ h1 {
   
   /* ADD YOUR CODE HERE */
   filter:blur(3px) grayscale(50%);
-  transition: filter var(--medium-animation-duration);
+  transition: filter var(--short-animation-time);
 }
 
 /* ADD YOUR CODE HERE */
@@ -105,11 +105,13 @@ h1 {
  @keyframes cards-slide {
   0%
   {
+    filter: blur(0px);
     transform: translateY(10%);
   }
   100%
   {
     transform: translateY();
+    filter: blur(0px);
   }
 } 
 
@@ -122,8 +124,8 @@ h1 {
 /* .tech-icon STYLES */
 .tech-icon {
   /* ADD CODE HERE */
-  filter:blur(3px) grayscale(100%);
-  transition: filter var(--medium-animation-duration);
+  filter:grayscale(100%);
+  transition: filter var(--short-animation-time);
 }
 
 /* .tech-icon STYLES */
